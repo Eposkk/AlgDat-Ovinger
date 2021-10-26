@@ -20,7 +20,7 @@ public class Oppg1 {
     public void findMostProfit(){
         Oppg1 main = new Oppg1();
         int numberOfDays = 1000;
-        //Integer[] stockChangePerDay=main.stockDataGenerator(numberOfDays);
+        //Integer[] stockChangePerDay=Oblig6.main.stockDataGenerator(numberOfDays);
         Integer[] stockChangePerDay = {-1,3,-9,2,2,-1,2,-1,-5};
         Integer[]stockValuesPerDay = new Integer[9];
 

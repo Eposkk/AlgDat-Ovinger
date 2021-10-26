@@ -1,8 +1,8 @@
 package Oblig1
 
 class Oppg1Kotlin {
-    var startTime = 0L;
-    var endTime = 0L;
+    private var startTime:Long = 0;
+    private var endTime:Long = 0;
 
     fun stockDataGenerator(numberOfDays: Int): IntArray {
         var stockChangePerDay = IntArray(numberOfDays);
@@ -51,7 +51,6 @@ class Oppg1Kotlin {
         }
         endTime = System.currentTimeMillis()-startTime;
         println("Kjøp på dag: "+index0+ "\nSelg på dag: " +index1+ "\nProfitt: "+maxdiff+"\nTid brukt: "+endTime+"ms");
-
     }
 }
 

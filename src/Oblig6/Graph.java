@@ -104,9 +104,11 @@ public class Graph {
         E = Integer.parseInt(numbers[1]);
 
         while ((st = br.readLine()) != null){
-            numbers = st.split("\\s");
-            int from = Integer.parseInt(numbers[0]);
-            int to = Integer.parseInt(numbers[1]);
+
+            numbers = st.trim().split("\\s+");
+
+            int from = Integer.parseInt(numbers[0].trim());
+            int to = Integer.parseInt(numbers[1].trim());
             Edge e = new Edge(node[to], node[from].edge1, from);
             node[from].edge1 = e;
         }
