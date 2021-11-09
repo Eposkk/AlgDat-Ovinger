@@ -3,12 +3,12 @@ package Oblig8;
 import java.io.*;
 import java.util.*;
 
-class Huffman {
+public class Huffman {
 
     HuffmanNode[] byteArray;
     String[] traversalArray = new String[256];
     byte[] arrayOfOriginalBytes;
-    int[] frequencies = new int[256];
+    long[] frequencies = new long[256];
     HuffmanNode writeTop;
 
     public void compress(ByteArrayOutputStream inputBytes, String a) throws IOException {
@@ -42,7 +42,7 @@ class Huffman {
         try{
             fil = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(file)));
             for (int i = 0; i < frequencies.length; i++) {
-                fil.writeInt(frequencies[i]);
+                fil.writeLong(frequencies[i]);
             }
 
             ArrayList<Boolean> allBits = new ArrayList<>();
@@ -107,11 +107,11 @@ class Huffman {
     }
 
     public byte[] decode(String file) throws IOException {
-        int[] readFrequencies = new int[256];
+        long[] readFrequencies = new long[256];
         var fil = new DataInputStream((new FileInputStream(file)));
 
         for (int i = 0; i < 256; i++) {
-            int freq = fil.readInt();
+            long freq = fil.readLong();
             readFrequencies[i]=freq;
         }
         int lastByte = fil.readByte();

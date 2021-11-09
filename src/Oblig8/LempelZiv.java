@@ -137,7 +137,7 @@ public class LempelZiv {
 
                 byte[] w = reWritten.toByteArray();
                 for(int l = 0; l<length; l++){
-                    reWritten.write(w[(w.length+offset)+l]);
+                        reWritten.write(w[(w.length+offset)+l]);
                 }
                 i+= 2;
             }
